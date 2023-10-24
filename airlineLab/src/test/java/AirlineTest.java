@@ -18,7 +18,24 @@ public class AirlineTest {
         Passenger passenger = new Passenger("Tom", "tlog@gmail.com", "999");
 
         flight.addPassenger(passenger);
-        assertThat(airline)
+        airline.addFlight(flight);
+
+        // fix me
+    }
+
+    @Test
+    public void canAddFlight(){
+        Flight flight = new Flight("London", "15, 6, 2012", "10445");
+        airline.addFlight(flight);
+        assertThat(airline.getFlightList().size()).isEqualTo(1);
+    }
+
+    @Test
+    public void canRemoveFlight(){
+        Flight flight = new Flight("London", "15, 6, 2012", "10445");
+        airline.addFlight(flight);
+        airline.removeFlight(flight);
+        assertThat(airline.getFlightList().size()).isEqualTo(0);
     }
 
 

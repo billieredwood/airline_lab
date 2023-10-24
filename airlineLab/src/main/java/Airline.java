@@ -25,5 +25,19 @@ public class Airline {
     public void setFlightList(ArrayList<Flight> flightList) {
         this.flightList = flightList;
     }
-    
+
+    public void addFlight(Flight flight){
+        this.flightList.add(flight);
+    }
+
+    public void removeFlight(Flight flight){
+        this.flightList.remove(flight);
+    }
+
+    public void printFLightList(){
+        for(Flight myFlight : flightList){
+            System.out.println("Destination: " + myFlight.destination + ", ID: " + myFlight.flightId);
+        }
+    }
+
 }
