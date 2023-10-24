@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Airline {
 
@@ -34,6 +35,17 @@ public class Airline {
         this.flightList.remove(flight);
     }
 
+    public void userAddFlight() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Which destination?");
+        String destination = scanner.nextLine();
+        System.out.println("What date?");
+        String date = scanner.nextLine();
+        System.out.println("Select a flight ID");
+        String flightId = scanner.nextLine();
+        Flight flight = new Flight(destination, date, flightId);
+        this.addFlight(flight);
+    }
     public void printFLightList(){
         for(Flight myFlight : flightList){
             System.out.println("Destination: " + myFlight.destination + ", ID: " + myFlight.flightId);
